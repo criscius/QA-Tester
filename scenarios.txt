@@ -1,21 +1,38 @@
-BDD: Behavior-Driven Development
+Author: Christina Cius 
+Role: QA Analyst / Automation Tester
 
+// ============================================================= 
+// ===========# BDD: Behavior-Driven Development ===============
+// =============================================================
 Given: I am on the login page
 When: I type an invalid email.
 Then: It should show an error message saying "Incorrect email".
 
-// ============================================================= 
-// ==========# Test Scenarios: Password Recovery ===============
-// =============================================================
+
+
+// ============# Test Scenarios: Password Recovery =============
 
 ## Scenario 1: Successful Password Reset (Happy Path)
-**Given** I am on the "Forgot Password" page
-**When** I enter a valid registered email address
-**And** I click on the "Reset Password" button
-**Then** I should see a success message: "A reset link has been sent to your email."
+Given I am on the "Forgot Password" page
+When I enter a valid registered email address
+And I click on the "Reset Password" button
+Then I should see a success message: "A reset link has been sent to your email."
 
 ## Scenario 2: Empty Email Field (Edge Case)
-**Given** I am on the "Forgot Password" page
-**When** I leave the email field empty
-**And** I click on the "Reset Password" button
+Given I am on the "Forgot Password" page
+When I leave the email field empty
+And I click on the "Reset Password" button
 **Then** I should see a validation error: "Email is required."
+
+
+// =================# Test Scenarios: Login ===================
+
+## Scenario 1: Successful Login (Happy Path)
+Given I am on the login page.
+When I enter valid credentials.
+Then I should be redirected to the "Products" page.
+
+## Scenario 2: Invalid Password (Edge Case)
+Given I am on the login page.
+When I enter a valid username but an incorrect password.
+Then I should see an error message: "Epic sadface: Username and password do not match".
