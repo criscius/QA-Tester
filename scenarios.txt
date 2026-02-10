@@ -10,6 +10,11 @@ Then: It should show an error message saying "Incorrect email".
 
 
 
+
+
+
+
+
 // ============# Test Scenarios: Password Recovery =============
 
 ## Scenario 1: Successful Password Reset (Happy Path)
