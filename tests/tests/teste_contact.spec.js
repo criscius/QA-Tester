@@ -2,7 +2,7 @@ const { test, expect } = require('@playwright/test');
 
 test('My day 4 test - Contact Form', async ({ page }) => {
     // 1. Sempre use o protocolo completo (https://)
-    await page.goto('https://www.cleaningsecrets.co.nz/');
+    await page.goto('https://www.kiwilaunch.co.nz/');
 
     // 2. Clique no link (usando regex / /i para ignorar maiúsculas/minúsculas)
     await page.getByRole('link', { name: /contact us/i }).click();
@@ -17,8 +17,8 @@ test('My day 4 test - Contact Form', async ({ page }) => {
     await campoName.fill('Christina');
 
     // Dica: Se o getByRole('field') falhar, tente getByLabel ou getByPlaceholder
-    await page.getByPlaceholder(/company/i).fill('My company');
-    await page.getByPlaceholder(/phone/i).fill('0270000000');
+    await page.getByPlaceholder(/company/i).fill('my company');
+    await page.getByPlaceholder(/phone/i).fill('0000000000');
     await page.getByPlaceholder(/email/i).fill('myemail@gmail.com');
     await page.getByPlaceholder(/subject/i).fill('Clarification');
     await page.getByPlaceholder(/message/i).fill('This is just a test from my automation study.');
